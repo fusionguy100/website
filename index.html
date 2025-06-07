@@ -25,7 +25,21 @@
       --card-bg: #fff;
       --card-hover: #f0f0f0;
     }
-    body, button, a, section, .project, .list li { cursor: inherit; }
+
+    /* GLOBAL CURSOR RESET */
+    body, button, a, section, .project, .list li {
+      cursor: inherit;
+    }
+    /* CLICKABLE ELEMENTS SHOULD SHOW POINTER */
+    nav a,
+    nav button {
+      cursor: pointer;
+    }
+    /* OPTIONAL: all links get the hand */
+    a {
+      cursor: pointer;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Roboto', sans-serif;
@@ -169,12 +183,13 @@
     <h2>Projects</h2>
 
     <div class="project">
-      <h3>Stock Market Analyzer</h3>
-      <p>Desktop app fetching real-time data via yfinance API, implementing SMA & MACD for trend analysis and generating trade signals.</p>
+      <h3>WGUPS Package Delivery System</h3>
+      <p>Developed a delivery routing algorithm to deliver 40 packages using three trucks and two drivers, ensuring all deliveries were completed in under 140 miles while meeting special-package constraints (e.g., time-sensitive and address-correction requirements).</p>
       <div class="tech-stack">
         <span>Python</span>
-        <span>Tkinter</span>
-        <span>mplfinance</span>
+        <span>CSV</span>
+        <span>Hash Table</span>
+        <span>Nearest Neighbor</span>
       </div>
     </div>
 
