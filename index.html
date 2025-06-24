@@ -2,139 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jacob Newell | Portfolio</title>
+  <!-- Roboto font -->
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pQ1Y+fQ2Fq+Z+YQX/slHY0kW4zQJp8GqvH+6+ZL+F2C5o4jB9jlJ1Y+O+E5+z4V6GZs/1e1Z3a0z3Yz3M9Hw8g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    :root {
-      --bg: #000;
-      --fg: #fff;
-      --accent: #ccc;
-      --transition: 0.3s ease;
-      --card-bg: #111;
-      --card-hover: #222;
-      cursor: url('assets/custom-cursor.png'), auto;
-    }
-    body.light-theme {
-      --bg: #fafafa;
-      --fg: #111;
-      --accent: #555;
-      --card-bg: #fff;
-      --card-hover: #f0f0f0;
-    }
-
-    body, button, a, section, .project, .list li { cursor: inherit; }
-    nav a, nav button, a { cursor: pointer; }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      transition: background var(--transition), color var(--transition);
-    }
-    a { color: var(--fg); text-decoration: none; transition: color var(--transition); }
-    a:hover { color: var(--accent); }
-
-    nav {
-      display: flex; justify-content: flex-end; align-items: center;
-      padding: 1rem 2rem; position: fixed; top: 0; width: 100%;
-      background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); z-index: 100;
-    }
-    nav a, nav button {
-      margin: 0 0.5rem; font-weight: 500; text-transform: uppercase;
-      font-size: 0.9rem; background: none; border: none; color: var(--fg);
-      transition: color var(--transition);
-    }
-    nav a.resume { border:1px solid var(--fg); padding:0.4rem 0.8rem; border-radius:4px; }
-
-    header {
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      height: 100vh; text-align: center; padding: 0 1rem;
-    }
-    header h1 { font-size: 3rem; font-weight: 700; }
-    header h1 span { color: var(--accent); }
-    header p { margin: 0.5rem 0; font-size: 1rem; }
-    .cta {
-      margin: 1rem 0; padding: 0.5rem 1rem; border: 1px solid var(--fg);
-      border-radius: 4px; text-transform: uppercase; font-size: 0.85rem;
-      transition: background var(--transition), color var(--transition);
-    }
-    .cta:hover { background: var(--fg); color: var(--bg); }
-
-    section { padding: 4rem 2rem; max-width: 900px; margin: auto; }
-    section h2 {
-      font-size: 2rem; margin-bottom: 1rem; letter-spacing: 1px;
-      border-bottom: 2px solid var(--accent); display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    .list { list-style: none; margin-top: 1rem;
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .list li {
-      background: var(--card-bg); padding: 0.8rem; border-radius: 6px;
-      transition: background var(--transition); text-align: center;
-    }
-    .list li:hover { background: var(--card-hover); }
-
-    .project {
-      background: var(--card-bg); padding: 1rem 1.5rem; margin-bottom: 1.5rem;
-      border-radius: 6px; transition: background var(--transition);
-    }
-    .project:hover { background: var(--card-hover); }
-    .project h3 { margin-bottom: 0.5rem; }
-    .project p, .project ul { font-size: 0.9rem; margin-left: 1rem; }
-    .project ul { list-style: disc; margin-top: 0.5rem; }
-
-    .tech-stack { display: flex; gap: 0.5rem; margin-top: 0.8rem; }
-    .tech-stack span {
-      background: rgba(255,255,255,0.1);
-      padding: 2px 6px; border-radius: 4px; font-size: 0.85rem;
-    }
-
-    #screenshots .gallery { display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1rem; margin-top: 1rem;
-    }
-    #screenshots .gallery img {
-      width: 100%; border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      transition: transform var(--transition);
-    }
-    #screenshots .gallery img:hover { transform: scale(1.03); }
-
-    footer {
-      text-align: center; padding: 2rem 1rem; font-size: 0.9rem;
-      border-top: 1px solid var(--accent); margin-top: 2rem;
-    }
-  </style>
+  <!-- Your styles.css -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome icons -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body>
   <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#screenshots">Screenshots</a>
-    <a href="#repositories">Repositories</a>
-    <a href="jnewell5025.pdf" class="resume" download>Resume</a>
+    <a href="projects.html" class="active">Projects Gallery</a>
+    <a href="recentJRJ.pdf" class="resume" download>Resume</a>
     <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
   </nav>
 
   <header id="about">
     <h1>Hello. I'm <span>Jacob Newell</span>.</h1>
-    <p>Bachelor of Computer Science student at Western Governors University (Expected Aug 2025)</p>
+    <div class="intro">
+      <p>
+        I’m a passionate computer science student specializing in backend development,
+        currently completing my BS at WGU, in hopes of graduating around August or September (2025). Currently focusing on Flask and Django!
+      </p>
+    </div>
     <a href="#projects" class="cta">View My Work</a>
     <div class="social">
       <a href="https://github.com/fusionguy100" target="_blank"><i class="fab fa-github"></i></a>
@@ -145,103 +42,50 @@
 
   <section id="education">
     <h2>Education</h2>
-    <p><strong>Western Governors University</strong><br />
-    Bachelor of Computer Science, Expected Aug 2025</p>
-    <h3>Relevant Coursework</h3>
-    <ul class="list">
-      <li>Data Structures &amp; Algorithms</li>
-      <li>Operating Systems</li>
-      <li>Advanced Data Management</li>
-      <li>Version Control</li>
-      <li>Discrete Math</li>
-      <li>Software Design &amp; Quality Assurance</li>
-    </ul>
+    <p><strong>Bachelor of Computer Science</strong>, Western Governors University (Expected Aug 2025)</p>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
-    <h3>Languages</h3>
+    <h2>Skills & Certifications</h2>
     <ul class="list">
-      <li>Java</li>
-      <li>Python</li>
-      <li>JavaScript</li>
-      <li>HTML &amp; CSS</li>
+      <li>Java, Python, JavaScript, HTML & CSS</li>
+      <li>Spring Boot, Flask, NodeJS, Bootstrap, Django</li>
+      <li>MongoDB, PostgreSQL, Git</li>
+      <li>ITIL 4 Foundation, Linux Essentials</li>
     </ul>
-    <h3>Frameworks &amp; Tools</h3>
-    <ul class="list">
-      <li>Spring Boot</li>
-      <li>Flask</li>
-      <li>Django</li>
-      <li>SQLAlchemy &amp; PostgreSQL</li>
-      <li>MongoDB</li>
-      <li>Docker</li>
-      <li>Git &amp; GitHub</li>
-    </ul>
-    <h3>Certifications</h3>
-    <ul class="list">
-      <li>ITIL 4 Foundation</li>
-      <li>Linux Essentials</li>
-    </ul>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="project">
-      <h3>Server <small>(May 2023 - Present) — The Boiling Crab, San Marcos, CA</small></h3>
-      <ul>
-        <li>Delivered exceptional customer service in a fast-paced environment by accurately taking and fulfilling customer orders.</li>
-        <li>Collaborated with team members to manage diverse roles, maintaining smooth operations during peak hours.</li>
-      </ul>
-    </div>
-    <div class="project">
-      <h3>Assistant Director <small>(Jan 2022 - Apr 2023) — Chick-fil-A, Vista, CA</small></h3>
-      <ul>
-        <li>Ownership of the Back of House and Front of House teams, ensuring operational excellence and staff training.</li>
-      </ul>
-    </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
+
     <div class="project">
-      <h3>Package Delivery Routing System</h3>
-      <p>(Python)</p>
+      <h3>Package Delivery Routing System <small>(Python)</small></h3>
       <ul>
-        <li>Built a logistics routing simulator applying a nearest-neighbor algorithm to deliver 40 packages under time, capacity, and address constraints.</li>
-        <li>Developed a custom hash table for constant-time (O(1)) package lookups and modeled delivery components using clean OOP design.</li>
-        <li>Optimized runtime performance and tested edge cases to ensure reliability under real-world delivery constraints.</li>
+        <li>Built a logistics routing simulator in Python that applied a nearest-neighbor algorithm to efficiently deliver 40 packages under time, capacity, and address constraints.</li>
+        <li>Developed a custom hash table for constant-time (O(1)) package lookups and modeled delivery components using clean object-oriented design.</li>
+        <li>Optimized runtime performance and tested edge cases to ensure reliability and scalability under real-world delivery constraints.</li>
       </ul>
     </div>
+
     <div class="project">
-      <h3>Hotel Booking Platform</h3>
-      <p>(Spring Boot, Angular, PostgreSQL, Docker)</p>
+      <h3>Hotel Booking Platform <small>(Spring Boot, Angular, PostgreSQL, Docker)</small></h3>
       <ul>
-        <li>Enabled users to browse and reserve hotel rooms by building REST APIs with Spring Boot and an Angular frontend.</li>
+        <li>Enabled users to browse and reserve hotel rooms by building a full-stack application with Spring Boot REST APIs and an Angular frontend.</li>
         <li>Reduced page load times by ~50% by implementing multithreaded services for real-time currency conversion and language translation.</li>
-        <li>Containerized the application with Docker and integrated PostgreSQL for persistent storage.</li>
+        <li>Demonstrated deployment readiness by containerizing the application with Docker and integrating a PostgreSQL database for persistent storage.</li>
       </ul>
     </div>
+
     <div class="project">
-      <h3>Movie Rating Web App</h3>
-      <p>(Python, Flask, SQLAlchemy, Flask-WTF, Bootstrap, TMDB API)</p>
+      <h3>Movie Rating Web App <small>(Python, Flask, SQLAlchemy, Flask-WTF, Bootstrap, TMDB API)</small></h3>
       <ul>
-        <li>Integrated with TMDB API to search for movies and persist user-generated ratings and reviews.</li>
-        <li>Implemented secure CRUD functionality and dynamic routing with Flask and CSRF protection with Flask-WTF.</li>
-        <li>Rendered responsive UI components with Jinja2 and Bootstrap, following MVC architecture and RESTful principles.</li>
+        <li>Developed a full-stack Flask application that integrates with the TMDB API to search for movies and persist user-generated ratings and reviews using a normalized SQLite database with SQLAlchemy ORM.</li>
+        <li>Implemented secure CRUD functionality and dynamic routing with Flask, using Flask-WTF for form validation, CSRF protection, and user input handling.</li>
+        <li>Rendered responsive UI components with Jinja2 templating and Bootstrap, following MVC architecture and RESTful principles to ensure scalability and maintainability.</li>
       </ul>
     </div>
   </section>
 
-  <section id="screenshots">
-    <h2>Screenshots</h2>
-    <p>Here are some highlights of my projects in action:</p>
-    <div class="gallery">
-      <img src="assets/wgups-screenshot1.png" alt="WGUPS Delivery System Screenshot 1" />
-      <img src="assets/wgups-screenshot2.png" alt="WGUPS Delivery System Screenshot 2" />
-      <img src="assets/hotel-screenshot1.png" alt="Hotel Booking Platform Screenshot" />
-      <img src="assets/ecommerce-screenshot1.png" alt="E-commerce Backend System Screenshot" />
-    </div>
-  </section>
 
   <section id="repositories">
     <h2>Latest Repositories</h2>
@@ -257,9 +101,7 @@
     &copy; 2025 Jacob Newell • Designed in Black &amp; White
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-  <script>
-    // JS for theme toggle, GitHub repos, and activity fetching
-  </script>
+  <!-- Your site scripts -->
+  <script defer src="scripts.js"></script>
 </body>
 </html>
