@@ -15,21 +15,24 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body>
+  <!-- NAV -->
   <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#skills">Skills</a>
-    <a href="projects.html" class="active">Projects Gallery</a>
+    <a href="projects.html">Projects</a>
     <a href="recentJRJ.pdf" class="resume" download>Resume</a>
     <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
   </nav>
 
+  <!-- HERO -->
   <header id="about">
-    <h1>Hello. I'm <span>Jacob Newell</span>.</h1>
+    <h1>Hello. I’m <span>Jacob Newell</span>.</h1>
     <div class="intro">
       <p>
         I’m a passionate computer science student specializing in backend development,
-        currently completing my BS at WGU, in hopes of graduating around August or September (2025). Currently focusing on Flask and Django!
+        currently completing my BS at WGU (Expected Aug 2025). I love building efficient
+        algorithms and full-stack applications that solve real-world problems.
       </p>
     </div>
     <a href="#projects" class="cta">View My Work</a>
@@ -40,11 +43,18 @@
     </div>
   </header>
 
+  <!-- STATUS BAR -->
+  <div class="status">
+    <p>Currently focusing on: <strong>Flask &amp; Django</strong></p>
+  </div>
+
+  <!-- EDUCATION -->
   <section id="education">
     <h2>Education</h2>
     <p><strong>Bachelor of Computer Science</strong>, Western Governors University (Expected Aug 2025)</p>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
     <h2>Skills & Certifications</h2>
     <ul class="list">
@@ -55,6 +65,7 @@
     </ul>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
 
@@ -62,7 +73,7 @@
       <h3>Package Delivery Routing System <small>(Python)</small></h3>
       <ul>
         <li>Built a logistics routing simulator in Python that applied a nearest-neighbor algorithm to efficiently deliver 40 packages under time, capacity, and address constraints.</li>
-        <li>Developed a custom hash table for constant-time (O(1)) package lookups and modeled delivery components using clean object-oriented design.</li>
+        <li>Developed a custom hash table for constant-time (O(1)) package lookups and modeled delivery components using clean OOP design.</li>
         <li>Optimized runtime performance and tested edge cases to ensure reliability and scalability under real-world delivery constraints.</li>
       </ul>
     </div>
@@ -72,36 +83,38 @@
       <ul>
         <li>Enabled users to browse and reserve hotel rooms by building a full-stack application with Spring Boot REST APIs and an Angular frontend.</li>
         <li>Reduced page load times by ~50% by implementing multithreaded services for real-time currency conversion and language translation.</li>
-        <li>Demonstrated deployment readiness by containerizing the application with Docker and integrating a PostgreSQL database for persistent storage.</li>
+        <li>Containerized the application with Docker and integrated a PostgreSQL database for persistent storage.</li>
       </ul>
     </div>
 
     <div class="project">
       <h3>Movie Rating Web App <small>(Python, Flask, SQLAlchemy, Flask-WTF, Bootstrap, TMDB API)</small></h3>
       <ul>
-        <li>Developed a full-stack Flask application that integrates with the TMDB API to search for movies and persist user-generated ratings and reviews using a normalized SQLite database with SQLAlchemy ORM.</li>
-        <li>Implemented secure CRUD functionality and dynamic routing with Flask, using Flask-WTF for form validation, CSRF protection, and user input handling.</li>
-        <li>Rendered responsive UI components with Jinja2 templating and Bootstrap, following MVC architecture and RESTful principles to ensure scalability and maintainability.</li>
+        <li>Developed a full-stack Flask app that integrates with the TMDB API to search for movies and persist user-generated ratings and reviews using SQLite + SQLAlchemy ORM.</li>
+        <li>Implemented secure CRUD functionality and dynamic routing with Flask, using Flask-WTF for form validation, CSRF protection, and input handling.</li>
+        <li>Rendered responsive UI with Jinja2 templating and Bootstrap, following MVC architecture and RESTful principles.</li>
       </ul>
     </div>
   </section>
 
-
+  <!-- REPOSITORIES -->
   <section id="repositories">
     <h2>Latest Repositories</h2>
     <ul id="repo-list"></ul>
   </section>
 
+  <!-- ACTIVITY -->
   <section id="activity">
     <h2>Latest GitHub Activity</h2>
     <ul id="activity-list"></ul>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    &copy; 2025 Jacob Newell • Designed in Black &amp; White
+    &copy; 2025 Jacob Newell • Designed in Black & White
   </footer>
 
-  <!-- Your site scripts -->
+  <!-- JS -->
   <script defer src="scripts.js"></script>
 </body>
 </html>
