@@ -179,3 +179,29 @@ footer {
 .status p {
   margin: 0;
 }
+
+
+#other-projects { padding: 2rem 1rem; }
+#repo-list.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  gap: 1rem;
+}
+.repo-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.repo-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+.repo-card p {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #555;
+}
+.repo-card a { text-decoration: none; color: #0366d6; }
