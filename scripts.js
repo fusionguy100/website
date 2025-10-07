@@ -1,34 +1,76 @@
 document.addEventListener('DOMContentLoaded', () => {
   const username = 'fusionguy100';
 
-  // Whitelist of repo names to display
-  const include = [
-    'Zillow_Scraper',
-    'Flash_Card_Project',
-    'Flask_Authentication'
-  ];
+// === 0) GitHub Bio + Profile (natural layout) ===
+fetch(`https://api.github.com/users/${username}`)
+  .then(r => r.json())
+  .then(user => {
+    // Avatar + link
+    const avatar = document.getElementById('gh-avatar');
+    const avatarLink = document.getElementById('gh-avatar-link');
+    if (avatar) avatar.src = user.avatar_url;
+    if (avatarLink) avatarLink.href = user.html_url;
 
-  // 1) Latest Repos (filtered cards)
-  fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`)
-    .then(response => response.json())
-    .then(repos => {
-      const container = document.getElementById('repo-list');
-      repos
-        .filter(r => !r.fork && include.includes(r.name))
-        .forEach(repo => {
-          const card = document.createElement('div');
-          card.className = 'repo-card';
-          card.innerHTML = `
-            <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
-            <p>${repo.description || ''}</p>
-            <small>★ ${repo.stargazers_count} • Updated: ${new Date(repo.updated_at).toLocaleDateString()}</small>
-          `;
-          container.appendChild(card);
-        });
-    })
-    .catch(err => console.error('Error fetching repos:', err));
+    // Name / handle
+    const nameEl = document.getElementById('gh-name');
+    const handleEl = document.querySelector('.gh-handle');
+    if (nameEl && user.name) nameEl.textContent = user.name;
+    if (handleEl) handleEl.textContent = `@${user.login}`;
 
-  // 2) Latest Activity
+    // Bio (fallback if missing)
+    const bioEl = document.getElementById('gh-bio');
+    if (bioEl) bioEl.textContent =
+      user.bio ||
+      'Software developer focused on Java/Spring Boot & React. Always learning, always building.';
+
+    // Micro-stats
+    const followersEl = document.getElementById('gh-followers');
+    const reposEl = document.getElementById('gh-repos');
+    if (followersEl) followersEl.textContent = `${user.followers} followers`;
+    if (reposEl) reposEl.textContent = `${user.public_repos} public repos`;
+  })
+  .catch(() => {
+    // graceful fallback: hide the card if API fails
+    const card = document.getElementById('github-profile');
+    if (card) card.style.display = 'none';
+  });
+
+
+// === 1) Latest Repos (filtered cards) ===
+const include = [
+  'Library-Management-FullStack',
+  'Twitter_Clone_API',
+  'final_project'
+];
+
+fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`)
+  .then(response => response.json())
+  .then(repos => {
+    const container = document.getElementById('repo-list');
+    container.innerHTML = ''; // Clear before inserting
+
+    repos
+      .filter(repo => !repo.fork && include.includes(repo.name))
+      .forEach(repo => {
+        const card = document.createElement('div');
+        card.className = 'repo-card';
+        card.innerHTML = `
+          <h4>
+            <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+            <a href="${repo.html_url}" target="_blank" aria-label="Open ${repo.name} on GitHub" class="gh-icon">
+              <i class="fab fa-github"></i>
+            </a>
+          </h4>
+          <p>${repo.description || 'No description available.'}</p>
+          <small>★ ${repo.stargazers_count} • Updated: ${new Date(repo.updated_at).toLocaleDateString()}</small>
+        `;
+        container.appendChild(card);
+      });
+  })
+  .catch(err => console.error('Error fetching repos:', err));
+
+
+  // === 2) Latest Activity ===
   fetch(`https://api.github.com/users/${username}/events/public?per_page=5`)
     .then(response => response.json())
     .then(events => {
@@ -42,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Error fetching activity:', err));
 
-  // 3) Theme Toggle
+  // === 3) Theme Toggle ===
   const toggle = document.getElementById('theme-toggle');
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-theme');
@@ -52,25 +94,25 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
   });
 
-  // 4) Full-screen on click
+  // === 4) Fullscreen for Images ===
   function requestFullscreen(el) {
     if (el.requestFullscreen) return el.requestFullscreen();
     if (el.webkitRequestFullscreen) return el.webkitRequestFullscreen();
-    if (el.mozRequestFullScreen)   return el.mozRequestFullScreen();
-    if (el.msRequestFullscreen)    return el.msRequestFullscreen();
-    return Promise.reject(new Error('Fullscreen API is not supported'));
+    if (el.mozRequestFullScreen) return el.mozRequestFullScreen();
+    if (el.msRequestFullscreen) return el.msRequestFullscreen();
+    return Promise.reject(new Error('Fullscreen API not supported'));
   }
 
   function exitFullscreen() {
     if (document.exitFullscreen) return document.exitFullscreen();
     if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
-    if (document.mozCancelFullScreen)   return document.mozCancelFullScreen();
-    if (document.msExitFullscreen)      return document.msExitFullscreen();
-    return Promise.reject(new Error('Exit fullscreen is not supported'));
+    if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
+    if (document.msExitFullscreen) return document.msExitFullscreen();
+    return Promise.reject(new Error('Exit fullscreen not supported'));
   }
 
   document.querySelectorAll('.gallery img, .project img').forEach(img => {
-    img.style.cursor = 'pointer'; // indicate clickability
+    img.style.cursor = 'pointer';
     img.addEventListener('click', () => {
       const fsElement =
         document.fullscreenElement ||
@@ -86,3 +128,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// === Contact form -> mailto ===
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contact-form');
+  if (!contactForm) return;
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const to = 'jnewell1820@gmail.com';
+    const name = (document.getElementById('name')?.value || '').trim();
+    const from = (document.getElementById('email')?.value || '').trim();
+    const msg = (document.getElementById('message')?.value || '').trim();
+
+    // Simple validation
+    if (!name || !from || !msg) return alert('Please fill out all fields.');
+
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${from}\n\nMessage:\n${msg}`
+    );
+
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  });
+});
+

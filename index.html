@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jacob Newell | Portfolio</title>
@@ -21,82 +22,147 @@
     <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="projects.html">Projects</a>
-    <a href="recentJRJ.pdf" class="resume" download>Resume</a>
+    <a href="#contact">Contact</a>
+    <a href="resume.pdf" class="resume" download>Resume</a>
     <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
   </nav>
 
-  <!-- HERO -->
-  <header id="about">
-    <h1>Hello. I’m <span>Jacob Newell</span>.</h1>
-    <div class="intro">
-      <p>
-        I’m a passionate computer science student specializing in backend development,
-        currently completing my BS at WGU (Expected Aug 2025). I love building efficient
-        algorithms and full-stack applications that solve real-world problems.
-      </p>
-    </div>
-    <a href="projects.html" class="cta">View My Work</a>
-    <div class="social">
-      <a href="https://github.com/fusionguy100" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/jacob-newell-020478260/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:jnewell1820@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-  </header>
+<!-- HERO -->
+<header id="about">
 
-  <!-- STATUS BAR -->
-  <div class="status">
-    <p>Currently focusing on: <strong> MERN </strong></p>
+  <section id="github-profile" class="github-profile">
+    <a id="gh-avatar-link" href="https://github.com/fusionguy100" target="_blank" aria-label="Open GitHub profile">
+      <img id="gh-avatar" class="avatar" alt="Jacob Newell GitHub avatar" />
+    </a>
+
+    <div class="profile-text">
+      <div class="name-line">
+        <h2 id="gh-name">Jacob Newell</h2>
+        <a class="gh-handle" href="https://github.com/fusionguy100" target="_blank">@fusionguy100</a>
+      </div>
+
+      <p id="gh-bio" class="bio">
+        Software developer focused on Java/Spring Boot & React. Always learning, always building.
+      </p>
+
+      <div class="meta">
+        <span id="gh-followers">—</span>
+        <span class="dot">•</span>
+        <span id="gh-repos">—</span>
+      </div>
+    </div>
+  </section>
+
+
+  <h1 class="hero-title">Hello. I’m <span>Jacob Newell</span>.</h1>
+
+  <div class="intro">
+    <p>
+      I’m a software developer passionate about building scalable and efficient applications using Java, Spring Boot, Angular, and Python. 
+      I enjoy writing clean, maintainable code and developing solutions that make a real-world impact.
+    </p>
   </div>
 
-  <!-- EDUCATION -->
-  <section id="education">
-    <h2>Education</h2>
-    <p><strong>Bachelor of Computer Science</strong>, Western Governors University (Expected Aug 2025)</p>
-  </section>
+  <a href="projects.html" class="cta">View My Work</a>
+  <div class="social">
+    <a href="https://github.com/fusionguy100" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/jacob-newell-020478260/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:jnewell1820@gmail.com" aria-label="Email Jacob"><i class="fas fa-envelope"></i></a>
+  </div>
+</header>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Skills & Certifications</h2>
-    <ul class="list">
-      <li>Java, Python, JavaScript, HTML & CSS</li>
-      <li>Spring Boot, Flask, NodeJS, Bootstrap, Django</li>
-      <li>MongoDB, PostgreSQL, Git</li>
-      <li>ITIL 4 Foundation, Linux Essentials</li>
+
+
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2>Education</h2>
+  <p><strong>Bachelor of Science in Computer Science</strong>, Western Governors University — <em>July 2025</em></p>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills & Certifications</h2>
+  <ul class="list">
+    <li><strong>Languages:</strong> Java, Python, JavaScript, HTML, CSS</li>
+    <li><strong>Frameworks & Libraries:</strong> Spring Boot, Angular, React, Flask, Node.js</li>
+    <li><strong>Databases:</strong> PostgreSQL, MongoDB</li>
+    <li><strong>Tools & Technologies:</strong> Git, Docker, RESTful APIs, Postman</li>
+    <li><strong>Certifications:</strong> ITIL 4 Foundation, Linux Essentials</li>
+  </ul>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="project">
+   <h3 class="xp-head">
+  <span class="role">Software Engineering Intern</span>
+  <span class="company">Treevah</span>
+  <small class="meta">| Remote | July 2025 – September 2025</small>
+</h3>
+
+    <ul>
+      <li>Assisted in building front-end components using React.js and Redux, contributing to performance and usability improvements.</li>
+      <li>Developed and tested REST APIs using Node.js and Express, integrating Azure Blob Storage for secure data handling.</li>
+      <li>Led QA efforts by establishing test plans, bug tracking workflows, and manual validation strategies in an agile development cycle.</li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
 
-    <div class="project">
-      <h3>Package Delivery Routing System <small>(Python)</small></h3>
-      <ul>
-        <li>Built a logistics routing simulator in Python that applied a nearest-neighbor algorithm to efficiently deliver 40 packages under time, capacity, and address constraints.</li>
-        <li>Developed a custom hash table for constant-time (O(1)) package lookups and modeled delivery components using clean OOP design.</li>
-        <li>Optimized runtime performance and tested edge cases to ensure reliability and scalability under real-world delivery constraints.</li>
-      </ul>
-    </div>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
 
-    <div class="project">
-      <h3>Hotel Booking Platform <small>(Spring Boot, Angular, PostgreSQL, Docker)</small></h3>
-      <ul>
-        <li>Enabled users to browse and reserve hotel rooms by building a full-stack application with Spring Boot REST APIs and an Angular frontend.</li>
-        <li>Reduced page load times by ~50% by implementing multithreaded services for real-time currency conversion and language translation.</li>
-        <li>Containerized the application with Docker and integrated a PostgreSQL database for persistent storage.</li>
-      </ul>
-    </div>
+  <div class="project">
+    <h3>
+      Library Management System
+      <small>(React, Spring Boot, PostgreSQL, Stripe API)</small>
+      <a href="https://github.com/fusionguy100/Library-Management-FullStack" target="_blank" aria-label="View on GitHub" class="gh-link">
+        <i class="fab fa-github"></i>
+      </a>
+    </h3>
+    <ul>
+      <li>Developed a full-stack library management web application with a React frontend and Java Spring Boot backend following RESTful architecture.</li>
+      <li>Integrated the Stripe API for secure online payments and fine processing, implementing user authentication and role-based access control.</li>
+      <li>Designed and managed relational data models with Spring Data JPA and PostgreSQL for tracking books, users, and transactions.</li>
+    </ul>
+  </div>
 
-    <div class="project">
-      <h3>Movie Rating Web App <small>(Python, Flask, SQLAlchemy, Flask-WTF, Bootstrap, TMDB API)</small></h3>
-      <ul>
-        <li>Developed a full-stack Flask app that integrates with the TMDB API to search for movies and persist user-generated ratings and reviews using SQLite + SQLAlchemy ORM.</li>
-        <li>Implemented secure CRUD functionality and dynamic routing with Flask, using Flask-WTF for form validation, CSRF protection, and input handling.</li>
-        <li>Rendered responsive UI with Jinja2 templating and Bootstrap, following MVC architecture and RESTful principles.</li>
-      </ul>
-    </div>
-    <a href="projects.html">Project Gallery</a>
-  </section>
+  <div class="project">
+    <h3>
+      Social Media API
+      <small>(Spring Boot, PostgreSQL, JPA, MapStruct)</small>
+      <a href="https://github.com/fusionguy100/Twitter_Clone_API" target="_blank" aria-label="View on GitHub" class="gh-link">
+        <i class="fab fa-github"></i>
+      </a>
+    </h3>
+    <ul>
+      <li>Engineered a RESTful API replicating Twitter’s core functionality with endpoints for user registration, tweeting, following, and hashtag tracking.</li>
+      <li>Designed layered architecture with controllers, services, repositories, and DTO mappers (MapStruct) for maintainable code separation.</li>
+      <li>Applied global exception handling, validation, and soft-delete logic to ensure robust error management and data consistency.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <h3>
+      Customer Churn Prediction Model
+      <small>(Python, Scikit-learn, Pandas, Jupyter, Matplotlib)</small>
+      <a href="https://github.com/fusionguy100/final_project" target="_blank" aria-label="View on GitHub" class="gh-link">
+        <i class="fab fa-github"></i>
+      </a>
+    </h3>
+    <ul>
+      <li>Built and evaluated a supervised ML model to predict customer churn using logistic regression on the Telco dataset, achieving 75%+ accuracy and AUC above 0.80.</li>
+      <li>Cleaned and preprocessed real-world data with pandas, addressing missing values, outliers, and encoding issues to boost model performance.</li>
+      <li>Created a performance dashboard that visualizes churn risk scores, model metrics, and driver insights to support business decisions.</li>
+    </ul>
+  </div>
+</section>
+
 
   <!-- REPOSITORIES -->
   <section id="repositories">
@@ -109,6 +175,38 @@
     <h2>Latest GitHub Activity</h2>
     <ul id="activity-list"></ul>
   </section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Get in Touch</h2>
+
+  <form id="contact-form" class="contact-form" aria-label="Contact form">
+    <div class="row">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" placeholder="Your name" required />
+    </div>
+
+    <div class="row">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="you@example.com" required />
+    </div>
+
+    <div class="row">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="How can I help?" required></textarea>
+    </div>
+
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+    <button type="submit" class="cta">Send Email</button>
+
+    <small class="muted note">
+      This opens your email app to send the message.
+    </small>
+  </form>
+</section>
+
+
 
   <!-- FOOTER -->
   <footer>
