@@ -1,4 +1,4 @@
-# 📚 Library Management System (Full-Stack Application)
+#  Library Management System (Full-Stack Application)
 
 A full-stack web application that enables users to browse, borrow, and manage library books with secure payment processing powered by **Stripe**.  
 Built with a **React** frontend and a **Spring Boot** backend, the project demonstrates RESTful API design, database management, and modern web architecture.
